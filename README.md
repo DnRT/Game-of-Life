@@ -6,6 +6,7 @@ El cual se ejecutara de la misma manera, tal como Gabriel Astudillo lo plantea, 
 
 Los detalles del SO y hardware a utilizar son los siguientes:
 
+
 Ademas los avances de cada experimento solo contendra los valores de cada generacion mas los tiempos empleados en cada paso. Los archivos de la version base o sequencial tendran el formato de ```ExpSec-R-C-I-S.txt``` donde R son las filas, C las columnas, I las iteraciones y S la probabilidad inicial de que este viva una celula. En cambio los experimentos de la forma vectorial tendran el siguiente formato ```ExpVec-R-C-I-S.txt``` bajo la misma nomenclatura anterior.
 
 Ejemplo de ejecucion:
