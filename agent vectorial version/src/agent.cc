@@ -65,11 +65,25 @@ uint8_t Agent::getLivingNeighbors(void) {
 	//Determinar los agentes LIVE
 	uint8_t livingNeighbors;
 	
-	livingNeighbors = 0;
+	livingNeighbors = vectorialChange(agentNeighbors);
+	/* livingNeighbors = 0;
 	for(auto const& fooAgent : agentNeighbors){
 		livingNeighbors += fooAgent->getState();
-	}
+	} */
 	return( livingNeighbors );
+}
+
+uint8_t Agent::vectorialChange(Neighbors agents){
+	uint8_t r = 0;
+	__mm128 a,b,c;
+	for(auto const& fooAgent : agents){
+		auto aux = fooAgent->getState();
+		a = _mm_load_ps(&aux);
+		b = _mm_load_ps(&r);
+		c = _mm_add_ps(a,b);
+		_mm_store_ps(&r,c);
+	}
+	return r;
 }
 
 void Agent::setNeighbors( const Neighbors _agentNeighbors){
