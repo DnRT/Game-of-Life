@@ -36,7 +36,8 @@ public:
 	
 	friend std::ostream& operator<<(std::ostream&,  Agent*);
 
-	
+	uint8_t vectorialChange(Neighbors);
+
 private:
 	uint8_t getLivingNeighbors();
 
